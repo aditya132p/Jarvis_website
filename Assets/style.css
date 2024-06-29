@@ -1,31 +1,36 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800&family=Poppins&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* CSS Reset Code Started */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html , body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: "Inter", sans-serif;
-    
+
 }
-/*
-font-family: 'Barlow', sans-serif;
-font-family: 'Barlow Condensed', sans-serif;
- font-family: 'Poppins', sans-serif;
-*/
-:root{
-    --font-size:24px;
-    --primary-color:#2b70c5;
-    --secondary-color:#1566d6;
-    --light-color:#fff;
-    --gray-color:#303236;
-    --btn-primary:#0d6efd;
-    --container-padding: 2rem 4rem ;
+/* CSS Reset Code Ended */
+
+/* CSS Variables That Can Use Like A Value Started */
+:root {
+    --font-size: 24px;
+    --primary-color: #2b70c5;
+    --secondary-color: #1566d6;
+    --light-color: #fff;
+    --gray-color: #303236;
+    --btn-primary: #0d6efd;
+    --container-padding: 2rem 4rem;
+    --padding-section: 5.5rem;
 }
+/* CSS Variables That Can Use Like A Value Ended */
+
+/* CSS Utlites And Re-used CSS Code Started */
+
 .container {
     width: 100%;
     max-width: 1230px;
@@ -33,45 +38,95 @@ font-family: 'Barlow Condensed', sans-serif;
     padding-right: 15px;
     padding-left: 15px;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
 
-button,input[type ="submit"]{
+.jarvis_title {
+    font-size: 3.125rem;
+    line-height: normal;
+    letter-spacing: -2px;
+    text-transform: capitalize;
+    color: var(--gray-color);
+}
+
+.jarvis_subtitle {
+    font-size: 0.92;
+    font-weight: 400;
+    color: var(--gray-color);
+}
+
+.box {
+    padding: 2.0625rem 2.5rem;
+    min-height: 187px;
+    border: 1px solid rgba(21, 102, 214, .18);
+
+}
+
+
+.text_extra_big {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--gray-color);
+}
+
+h1 {
+    font-size: 4.1875rem;
+    color: var(--gray-color);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 104.627%;
+    letter-spacing: -2.68px;
+    text-transform: capitalize;
+}
+
+.span-txt {
+    color: var(--primary-color);
+}
+
+button,
+input[type="submit"] {
     padding: 1.1rem 1.3rem;
     font-size: 1.1rem;
     font-weight: 500;
-    border:none;
+    border: none;
     cursor: pointer;
 }
-.w-full{
-    width: 100%;
-}
-.h-full{
-    height: 100%;
-}
-.rounded-lg{
+
+.rounded-lg {
     border-radius: 10rem;
 }
-.btn-primary{
-background-color: var(--secondary-color);
-color: var(--light-color);
+
+.rounded-md {
+    border-radius: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
 
 }
 
-.btn-secondary{
-color: var(--gray-color);
-background-color: var(--light-color);
-border: 1.3px solid #bbbb;
-font-size: 1.3rem;
-font-weight: 500;
-transition: background-color 0.5s ease , color 0.4s ease;
+.btn-secondary {
+    color: var(--gray-color);
+    background-color: var(--light-color);
+    border: 1.3px solid #bbbb;
+    font-size: 1.3rem;
+    font-weight: 500;
+    transition: background-color 0.5s ease, color 0.4s ease;
 }
-.btn-secondary:hover{
+
+.btn-secondary:hover {
     background-color: var(--secondary-color);
     color: #fff;
 }
-header nav{
+
+/* CSS Utlites And Re-used CSS Code Ended */
+
+/* Navbar Section Started */
+
+header nav {
     position: relative;
     padding: 1.2rem 0rem;
     z-index: 100;
@@ -80,15 +135,17 @@ header nav{
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(42, 42, 43, 0.05);
-    
+
 }
-nav .nav-center{
+
+nav .nav-center {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    
-   
+
+
 }
+
 .nav-center a {
     font-size: 1rem;
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -105,96 +162,267 @@ nav .nav-center{
     bottom: -35px;
     left: -10px;
     /* opacity: 0; */
-    width: 0;  
+    width: 0;
     border-radius: 1rem;
     height: 3px;
     background-color: var(--btn-primary);
-    transition: width 0.5s cubic-bezier( 0.82, 0.27, 0.41, 0.77 ), opacity 0.5s ease;  
+    transition: width 0.5s cubic-bezier(0.82, 0.27, 0.41, 0.77), opacity 0.5s ease;
 }
-i{
+
+.nav-center i {
     font-size: 1.3rem;
     transform: rotate(0deg);
     transition: transform 0.4s ease;
 }
-.nav-center a:focus i{
+
+.nav-center a:focus i {
     transform: rotate(180deg);
 }
+
 .nav-center a:hover::before,
 .nav-center a:focus::before {
-    width: calc(100% + 1.5rem);  
+    width: calc(100% + 1.5rem);
     /* opacity: 1; */
 }
-nav .hamburg{
-    display: none;
 
+nav .hamburg {
+    display: none;
 }
-.hamburg i{
+
+.hamburg i {
     font-size: 1.5rem;
     color: var(--btn-primary);
 }
 
+/* Navbar Section Ended */
 
-.hero-section{
-width: 100%;
-height: 70vh;
+/* Hero Section Started */
+
+.hero-section {
+    width: 100%;
+    /* min-height: 70vh; */
+    padding-bottom: var(--padding-section);
 }
-.hero-section .container{
+
+.hero-section .container {
     max-width: 860px;
 }
-.hero-section .container div{
-    padding-top: 5rem;
-    color:var(--gray-color);
+
+.hero-section .container div {
+    padding-top: var(--padding-section);
+    color: var(--gray-color);
     font-size: 14px;
     font-weight: 500;
 }
-.hero-section .container h1{
+
+.hero-section .container h1 {
     padding-top: 1.5rem;
-    font-size: 4.1rem;
-    line-height: 4.3rem;
-    color: var(--gray-color);
+    line-height: 4.3125rem;
 }
-.hero-section h1 span{
-    color: var(--primary-color);
-}
-.hero-section .container p{
+
+.hero-section .container p {
     padding-top: 2rem;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--gray-color);
     line-height: 2rem;
 }
-.hero-section  .container button{
+
+.hero-section .container button {
     margin-top: 2rem;
 }
+
+/* Hero Section Ended */
+
+/* Jarvis Video Section Started */
+
+.jv-demo {
+    width: 100%;
+}
+
+.jv-demo img {
+    width: 100%;
+    margin-bottom: 5.5rem;
+}
+
+/* Jarvis Video Section Ended */
+
+/* jarvis features Section Started */
+
+.jarvis_features {
+    padding-top: var(--padding-section);
+    width: 100%;
+    padding-bottom: calc(var(--padding-section) + 2rem);
+   
+}
+
+.jarvis-features_top {
+    width: 100%;
+}
+
+.jarvis-features_top p {
+    padding-top: 2rem;
+}
+
+.jarvis_features .container {
+    max-width: 1030px;
+}
+
+.jarvis_features_bottom {
+    display: flex;
+    flex-shrink: 1;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    margin-top: 4rem;
+    gap: 2rem;
+}
+
+.features-coloums-content {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.coloums {
+    display: flex;
+    align-items: center;
+    background: rgba(43, 112, 197, .01);
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.coloums:nth-child(2) {
+    background: rgba(43, 112, 197, .04);
+}
+
+.coloums:nth-child(3) {
+    background: rgba(43, 112, 197, .1);
+}
+
+.jarvis_features_bottom_lft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 50%;
+}
+
+.jarvis_features_bottom_rht {
+    width: 50%;
+
+}
+
+.jarvis_features_bottom_rht img {
+    height: 100%;
+}
+
+/* jarvis features Section Ended */
+
+
+/* why us section Started */
+
+.jarvis_why_us {
+    width: 100%;
+    padding-top: var(--padding-section);
+    background: linear-gradient(0deg, rgba(43, 112, 197, 0.04) 0%, rgba(43, 112, 197, 0.04) 100%), #fff;
+    padding-bottom: var(--padding-section);
+}
+
+.jarvis_why_us .container {
+    max-width: 1030px;
+}
+
+.jarvis_why_us h2 {
+    margin-bottom: 2rem;
+}
+
+.jarvis_why_us p {
+    margin-bottom: 2rem;
+    line-height: 1.6rem;
+}
+
+.jarvis_why_us .jarvis_why_us_row {
+    margin-top: calc(var(--padding-section) - 1.5rem);
+    display: flex;
+    justify-content: space-between;
+}
+
+.jarvis_why_us_row span {
+    font-weight: 600;
+}
+
+/* why us section ended */
+
+/* jarvis server Section Started */
+
+.jarvis_server {
+    padding-top: var(--padding-section);
+    width: 100%;
+    padding-bottom: var(--padding-section);
+    
+}
+
+.jarvis_server .jarvis_server_row {
+    margin-top: 5rem;
+    display: flex;
+    gap: 1.3rem;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.jarvis_server_coloum {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 33.33333%;
+}
+
+.jarvis_server_coloum img:nth-child(1) {
+    width: 100%;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.jarvis_server_coloum img:nth-child(1):hover {
+
+    transform: scale(0.9);
+}
+
+/* jarvis server Section Ended */
+
+
 
 
 
 /* Media Quries on 991px Started */
-@media  (max-width:991px){
-    header{
+@media (max-width:991px) {
+    header {
         z-index: 100;
     }
-nav .nav-center{
-    position: absolute;
-    flex-direction: column;
-    width: 100%;
-    height: 25rem;  
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    background-color: #ffffff; 
-    /* border: 2px solid black; */
-    transition: all 0.5s ease;
-    z-index: -1;
-    top: -500px;
-    left: 0%;
-    
+
+    nav .nav-center {
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        height: 25rem;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 2rem;
+        background-color: #ffffff;
+        /* border: 2px solid black; */
+        transition: all 0.5s ease;
+        z-index: -1;
+        top: -500px;
+        left: 0%;
+
+    }
+
+    .nav-center a::before {
+        position: relative;
+    }
+
+    nav .hamburg {
+        display: block;
+    }
 }
-.nav-center a::before{
-    position: relative;
-}
-nav .hamburg{
-    display: block;
-}
-}
+
 /* Media Quries on 991px  Ended*/
